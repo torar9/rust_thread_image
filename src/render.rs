@@ -1,6 +1,6 @@
 use ::image::png::PNGEncoder;
 use ::image::ColorType;
-use rand::prelude::*;
+use ::rand::prelude::*;
 
 use std::io::Write;
 
