@@ -29,7 +29,7 @@ fn prepare_rand_map_and_save(size: Size) -> bool
         {
             for mut line in pixels.chunks_mut((amount  / threads) as usize)
             {
-            spawner.spawn(move ||
+                spawner.spawn(move ||
                 {
                     for i in 0..line.len()
                     {
