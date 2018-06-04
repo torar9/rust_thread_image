@@ -24,6 +24,7 @@ fn prepare_rand_map_and_save(size: Size) -> bool
 
     let mut pixels: Vec<u8> = imbf.into_vec();
     println!("Rendering random map...");
+
     crossbeam::scope(|spawner|
         {
             for mut line in pixels.chunks_mut((amount  / threads) as usize)
@@ -71,6 +72,8 @@ fn image_to_file(buff: image::ImageBuffer<image::Rgba<u8>, Vec<u8>>) -> bool
 fn get_size(args: &Vec<String>) -> Result<Size, Box<std::error::Error>>
 {
     let mut iter = args.iter();
+
+    //Coded by vitalyd at users.rust-lang.org .... Thank you so much :)
     match (iter.next(), iter.next())
     {
         (Some(x), Some(y)) => Ok(Size
@@ -84,6 +87,7 @@ fn get_size(args: &Vec<String>) -> Result<Size, Box<std::error::Error>>
         }),
         _ => Err("Invalid arguments".into()),
     }
+    //...
 }
 
 fn main()
