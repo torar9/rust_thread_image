@@ -73,7 +73,7 @@ fn get_size(args: &Vec<String>) -> Result<Size, Box<std::error::Error>>
 {
     let mut iter = args.iter();
 
-    //Coded by vitalyd at users.rust-lang.org .... Thank you so much :)
+    //Coded by vitalyd at users.rust-lang.org/ .... Thank you so much :)
     match (iter.next(), iter.next())
     {
         (Some(x), Some(y)) => Ok(Size
