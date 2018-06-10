@@ -63,7 +63,7 @@ pub fn prepare_rand_map_and_save(size: Size) -> bool
         {
             let encoder = PNGEncoder::new(x);
             println!("Encoding file");
-            encoder.encode(&imbf, size.width, size.height, ColorType::RGBA(8)).unwrap();
+            encoder.encode(&imbf, size.height, size.width, ColorType::RGBA(8)).unwrap();
             true
         },
         Err(err) =>
